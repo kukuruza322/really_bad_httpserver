@@ -18,10 +18,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.wfile.write(html.encode())
 
 
-html = '<html>' \
-       '<head><meta charset="utf-8">' \
-       '<title>Connection with satellites established.</title></head>' \
-       '<body>GET response also has been received.</body>' \
-       '</html>'
+with open('page.html', 'r', encoding='utf-8') as file:
+    html = file.read()
 
 run(handler_class=MyHandler)
